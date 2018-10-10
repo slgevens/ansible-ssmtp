@@ -1,11 +1,11 @@
 ---
 
 - name: Install SSMTP (apt)
-  apt: name=ssmtp state=installed update_cache=yes
+  apt: name=ssmtp state=present update_cache=yes
   when: ansible_os_family == 'Debian'
 
 - name: Install SSMTP (yum)
-  yum: name=ssmtp state=installed
+  yum: name=ssmtp state=present
   when: ansible_os_family == 'RedHat'
 
 - name: Set up ssmtp.conf
